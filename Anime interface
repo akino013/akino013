@@ -1,0 +1,49 @@
+// Anime interface
+interface Anime {
+    void setTitle(String title);
+    void setGenre(String genre);
+    void setNumberOfEpisodes(int numberOfEpisodes);
+    void play();
+}
+
+// Anime implementation class
+class AnimeImpl implements Anime {
+    private String title;
+    private String genre;
+    private int numberOfEpisodes;
+
+    @Override
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @Override
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    @Override
+    public void setNumberOfEpisodes(int numberOfEpisodes) {
+        this.numberOfEpisodes = numberOfEpisodes;
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Now playing: " + title + " - Genre: " + genre + " - Episodes: " + numberOfEpisodes);
+    }
+}
+
+public class AnimeApp {
+    public static void main(String[] args) {
+        // Creating an instance of Anime
+        Anime anime = new AnimeImpl();
+
+        // Setting attributes
+        anime.setTitle("My Anime");
+        anime.setGenre("Action");
+        anime.setNumberOfEpisodes(12);
+
+        // Playing the anime
+        anime.play();
+    }
+}
